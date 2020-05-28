@@ -20,7 +20,7 @@ export default function CameraScreen() {
     return <Text>No access to camera</Text>;
   }
   return (
-    <View style={{ width : width}}>
+    <View style={{ width : width, paddingBottom : 20,backgroundColor : '#000'}}>
       <Camera style={{ flex: 1 }} type={type}>
         <View
           style={{

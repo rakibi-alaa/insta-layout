@@ -3,31 +3,12 @@ import { Text, View ,Dimensions} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const { width, height } = Dimensions.get('window');
-class  HomeScreen extends React.PureComponent {
-    componentDidMount(){
-        console.log('Home mounted')
-    }
-    render(){
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-      </View>
-    );
-  }
-}
 
-class  SettingsScreen extends React.PureComponent {
-    componentDidMount(){
-        console.log('settings mounted')
-    }
-    render(){
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-}
+import HomeScreen from './tabScreens/home'
+import SearchScreen from './tabScreens/search'
+import MediaScreen from './tabScreens/media'
+import LikesScreen from './tabScreens/likes'
+import ProfileScreen from './tabScreens/profile'
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +29,10 @@ export default function TabNavigatorScreen() {
         
         style={{backgroundColor : 'red'}}>
         <Tab.Screen name="Home"  component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Search"  component={SearchScreen} />
+        <Tab.Screen name="Media"  component={MediaScreen} />
+        <Tab.Screen name="Likes" component={LikesScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </View>
   );

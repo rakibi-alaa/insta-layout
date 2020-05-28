@@ -14,7 +14,7 @@ const StyledView = styled.View`
     height: 100%;
     background-color : beige;
 `
-export default function Home() {
+export default function Main() {
   return (
     <StyledSafeAreaView>
       <ScrollView

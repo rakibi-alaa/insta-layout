@@ -4,7 +4,7 @@ import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from './src/screens/home'
+import MainScreen from './src/screens/main'
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
    
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={MainScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
