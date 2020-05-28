@@ -28,13 +28,11 @@ export default function CameraScreen() {
             backgroundColor: 'transparent',
             flexDirection: 'row',
           }}>
-          <TouchableOpacity
-            style={{
+          <TouchableOpacity style={{
               flex: 0.1,
               alignSelf: 'flex-end',
               alignItems: 'center',
-            }}
-            onPress={() => {
+            }} onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
                   ? Camera.Constants.Type.front

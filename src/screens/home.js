@@ -3,6 +3,7 @@ import { StyleSheet, Text, View,Dimensions,ScrollView } from 'react-native';
 import styled from 'styled-components/native'
 import CameraScreen from './camera'
 import TabNavigatorScreen from './TabsScreen';
+import MessagingScreen from './messaging';
 const { width, height } = Dimensions.get('window');
 const StyledSafeAreaView = styled.View`
     width: 100%;
@@ -18,11 +19,14 @@ export default function Home() {
     <StyledSafeAreaView>
       <ScrollView
           showsVerticalScrollIndicator={true}
+          //snapToInterval={width}
           pagingEnabled
           horizontal
+          
         >
           <CameraScreen />
           <TabNavigatorScreen />
+          <MessagingScreen />
         </ScrollView>
     </StyledSafeAreaView>
   );
