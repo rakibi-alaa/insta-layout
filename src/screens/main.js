@@ -14,22 +14,31 @@ const StyledView = styled.View`
     height: 100%;
     background-color : beige;
 `
-export default function Main() {
-  return (
-    <StyledSafeAreaView>
-      <ScrollView
-          showsVerticalScrollIndicator={true}
-          //snapToInterval={width}
-          pagingEnabled
-          horizontal
-          
-        >
-          <CameraScreen />
-          <TabNavigatorScreen />
-          <MessagingScreen />
-        </ScrollView>
-    </StyledSafeAreaView>
-  );
+export default class Main extends React.Component {
+  componentDidMount(){
+    setTimeout(()=>{
+      this.scrollView.scrollTo({x: width,animated : false})
+    },1)
+  }
+  render(){
+    return (
+      <StyledSafeAreaView>
+        <ScrollView
+            showsVerticalScrollIndicator={true}
+            //snapToInterval={width}
+            pagingEnabled
+            ref={ref => this.scrollView = ref}
+            horizontal
+            
+          >
+            <CameraScreen />
+            <TabNavigatorScreen />
+            <MessagingScreen />
+          </ScrollView>
+      </StyledSafeAreaView>
+    );
+  }
+  
 }
 
 const styles = StyleSheet.create({

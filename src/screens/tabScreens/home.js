@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View ,Dimensions, SafeAreaView} from 'react-native';
-import Header from '../../components/header'
+import Header from '../../components/homeHeader'
 
 const { width, height } = Dimensions.get('window');
 
