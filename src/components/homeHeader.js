@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Text, View,Dimensions,ScrollView, Image } from 'react-native';
+import {  Text, View,Dimensions,ScrollView, Image ,Platform} from 'react-native';
 import styled from 'styled-components/native'
 import Svg, { Circle, Line,Path,G } from 'react-native-svg';
 const { width, height } = Dimensions.get('window');
@@ -34,7 +34,8 @@ const Title = styled.Text`
 `
 const HeaderContainer = styled.View`
     width: ${width}px;
-    height: 50px;
+    margin-top :${Platform.OS === 'android' ? 25: 0}px;
+    height: 45px;
     display : flex;
     flex-direction : row;
     justify-content:space-between;

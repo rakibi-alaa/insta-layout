@@ -12,10 +12,11 @@ import ProfileScreen from './tabScreens/profile'
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigatorScreen() {
+export default function TabNavigatorScreen({toggleScroll}) {
   return (
     <View style ={{width : width}}>
-      <Tab.Navigator tabBarOptions={{
+      <Tab.Navigator 
+      tabBarOptions={{
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
             style: {height : 60,},
@@ -28,7 +29,9 @@ export default function TabNavigatorScreen() {
         }}
         
         style={{backgroundColor : 'red'}}>
-        <Tab.Screen name="Home"  component={HomeScreen} />
+        <Tab.Screen name="Home">
+        {() => <HomeScreen toggleScroll={toggleScroll} />}
+        </Tab.Screen>
         <Tab.Screen name="Search"  component={SearchScreen} />
         <Tab.Screen name="Media"  component={MediaScreen} />
         <Tab.Screen name="Likes" component={LikesScreen} />

@@ -15,24 +15,37 @@ const StyledView = styled.View`
     background-color : beige;
 `
 export default class Main extends React.Component {
+
+  constructor() {
+    super();
+    this.toggleScroll = this.toggleScroll.bind(this)
+		this.state = {
+      scroll : true
+		};
+  }
+  
   componentDidMount(){
     setTimeout(()=>{
       this.scrollView.scrollTo({x: width,animated : false})
     },1)
   }
+  toggleScroll(bool){
+    this.setState({scroll : bool})
+  }
+
   render(){
+    
     return (
       <StyledSafeAreaView>
         <ScrollView
-            showsVerticalScrollIndicator={true}
-            //snapToInterval={width}
+            showsHorizontalScrollIndicator={false}
             pagingEnabled
+            scrollEnabled={this.state.scroll}
             ref={ref => this.scrollView = ref}
             horizontal
-            
           >
             <CameraScreen />
-            <TabNavigatorScreen />
+            <TabNavigatorScreen toggleScroll={this.toggleScroll} />
             <MessagingScreen />
           </ScrollView>
       </StyledSafeAreaView>
