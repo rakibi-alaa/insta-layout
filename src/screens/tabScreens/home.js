@@ -1,13 +1,17 @@
 import * as React from 'react';
-import { Text, View ,Dimensions} from 'react-native';
+import { Text, View ,Dimensions, SafeAreaView} from 'react-native';
+import Header from '../../components/header'
+
 const { width, height } = Dimensions.get('window');
+
+
 class  HomeScreen extends React.PureComponent {
     
     render(){
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-      </View>
+      <SafeAreaView>
+        <Header />
+      </SafeAreaView>
     );
   }
 }
