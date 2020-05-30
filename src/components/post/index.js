@@ -3,6 +3,7 @@ import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } fro
 import styled from 'styled-components/native'
 import Svg, { Circle, Line,Path,G } from 'react-native-svg';
 import PostHeader from './postHeader';
+import PostBottomReactions from './postBottomReactions';
 const { width, height } = Dimensions.get('window');
 
 const PostContainer = styled.View`
@@ -19,11 +20,8 @@ const PostImageCount = styled.Text`
     position : absolute;
     top: 10px;
     right : 10px;
-    width :35px; 
-    height : 28px;
-    padding: 4px;
-    border-radius : 15px;
-    line-height : 19px;
+    padding: 4px 8px;
+    border-radius : 13px;
     background-color : black;
     text-align : center;
     color : white;
@@ -36,8 +34,11 @@ export default function Post({item}){
         <PostContainer id={item.id}>
             <PostHeader />
             <PostImage source={require('../../../assets/stories/storie2.jpeg')} >
-                <PostImageCount>1/5</PostImageCount>
+                <PostImageCount>
+                    <Text>1/2</Text>
+                </PostImageCount>
             </PostImage>
+            <PostBottomReactions/>
         </PostContainer>
     );
 

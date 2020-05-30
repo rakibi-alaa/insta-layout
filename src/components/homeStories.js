@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } from 'react-native';
 import styled from 'styled-components/native'
-import Svg, { Circle, Line,Path,G } from 'react-native-svg';
+
 const { width, height } = Dimensions.get('window');
 
 
