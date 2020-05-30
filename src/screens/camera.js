@@ -20,7 +20,8 @@ export default function CameraScreen() {
     return <Text>No access to camera</Text>;
   }
   return (
-    <View style={{ width : width,height : 500,marginTop : 80,backgroundColor : '#000'}}>
+    <View style={{backgroundColor : '#000'}}>
+    <View style={{ width : width,height : 600,marginTop : 100,backgroundColor : '#000',borderBottomWidth : 1,borderTopWidth : 1,borderColor : '#FFF'}}>
       <Camera style={{ flex: 1 }} type={type}>
         <View
           style={{
@@ -32,10 +33,14 @@ export default function CameraScreen() {
         </View>
         
       </Camera>
-      <TouchableOpacity style={{
-              flex: 0.1,
-              alignSelf: 'flex-end',
-              alignItems: 'center',
+
+      
+    </View>
+    <TouchableOpacity style={{
+              width : 100,
+              height : 100,
+              justifyContent : 'center',
+              alignItems : 'center',
             }} onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
@@ -44,7 +49,7 @@ export default function CameraScreen() {
               );
             }}>
             <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
-          </TouchableOpacity>
+    </TouchableOpacity>
     </View>
   );
 }

@@ -37,6 +37,7 @@ const PostHeaderImage= styled.Image`
 
 const PostHeaderUserName= styled.Text`
     font-size : 14px;
+    font-weight : 600;
     color :#000 ;
 `
 

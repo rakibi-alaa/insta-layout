@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 import Svg, { Circle, Line,Path,G } from 'react-native-svg';
 import PostHeader from './postHeader';
 import PostBottomReactions from './postBottomReactions';
+import PostDetails from './postDetails';
 const { width, height } = Dimensions.get('window');
 
 const PostContainer = styled.View`
@@ -39,6 +40,7 @@ export default function Post({item}){
                 </PostImageCount>
             </PostImage>
             <PostBottomReactions/>
+            <PostDetails />
         </PostContainer>
     );
 

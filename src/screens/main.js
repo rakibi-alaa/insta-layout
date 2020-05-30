@@ -19,6 +19,7 @@ export default class Main extends React.Component {
   constructor() {
     super();
     this.toggleScroll = this.toggleScroll.bind(this)
+    this.scrollTo = this.scrollTo.bind(this)
 		this.state = {
       scroll : true
 		};
@@ -32,11 +33,14 @@ export default class Main extends React.Component {
   toggleScroll(bool){
     this.setState({scroll : bool})
   }
+  scrollTo(x){
+    this.scrollView.scrollTo({x: x,animated : true})
+  }
 
   render(){
     
     return (
-      <StyledSafeAreaView>
+      <StyledSafeAreaView >
         <ScrollView
             showsHorizontalScrollIndicator={false}
             pagingEnabled
@@ -45,7 +49,7 @@ export default class Main extends React.Component {
             horizontal
           >
             <CameraScreen />
-            <TabNavigatorScreen toggleScroll={this.toggleScroll} />
+            <TabNavigatorScreen scrollTo={this.scrollTo} toggleScroll={this.toggleScroll} />
             <MessagingScreen />
           </ScrollView>
       </StyledSafeAreaView>

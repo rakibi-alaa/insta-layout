@@ -14,15 +14,15 @@ class  HomeScreen extends React.PureComponent {
     }
     render(){
       return (
-        <SafeAreaView>
-          <Header />
+        <SafeAreaView style={{backgroundColor : '#FFF'}}>
+          <Header scrollTo={this.props.scrollTo}/>
           <Stories toggleScroll={this.props.toggleScroll}/>
           <FlatList
           showsVerticalScrollIndicator={false}
           data={[1,2,3]} 
           renderItem={this.renderItem}
           keyExtractor={item => item + ''}
-          contentContainerStyle={{paddingBottom : 170}}
+          contentContainerStyle={{paddingBottom : 170,backgroundColor:'#fff'}}
           />
         </SafeAreaView>
       );

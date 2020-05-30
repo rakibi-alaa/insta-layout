@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import {  Text,Dimensions,TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native'
 const { width, height } = Dimensions.get('window');
 import Svg, { Rect, Line,Path,G } from 'react-native-svg';
+
 const PostBottomReactionsContainer = styled.View`
     width: ${width}px;
     height : 60px;
@@ -27,15 +28,15 @@ const RightIcons = styled.View`
 
 
 export default function PostBottomReactions(){
-
+    const [liked, setLiked] = useState(false);
     return (
         <PostBottomReactionsContainer>
             <LeftIcons>
-            <TouchableOpacity>
-                    <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"  stroke-linejoin="round">
+            <TouchableOpacity onPress={()=> setLiked(!liked)}>
+                    <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke={liked ? 'red' : '#2c3e50'} fill="none" stroke-linecap="round"  stroke-linejoin="round">
                         
                         <Path stroke="none" d="M0 0h24v24H0z"/>
-                        <Path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+                        <Path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" fill={liked ? 'red' : 'none'}/>
                     </Svg>
             </TouchableOpacity>
             <TouchableOpacity>
