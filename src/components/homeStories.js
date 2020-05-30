@@ -7,15 +7,15 @@ const { width, height } = Dimensions.get('window');
 
 const StoriesContainer = styled.ScrollView`
     width: ${width}px;
-    height: 95px;
+    height: 120px;
     display : flex;
     flex-direction : row;
-    padding : 4px 0px;
+    padding : 5px 0px;
     borderBottomWidth : 1px ;
     borderBottomColor : rgba(204,204,204, .9);
 `
 
-const StorieUserContainer = styled.View`
+const StorieUserContainer = styled.TouchableOpacity`
     
 `
 const StoryImageContainer = styled.View`
@@ -60,13 +60,14 @@ const StoryUserName = styled.Text`
 `
 
 export default class Stories extends React.Component {
+
+   
+
     render(){
-
-
     return (
         <StoriesContainer 
-        onScrollBeginDrag={()=> this.props.toggleScroll(false)}
-        onScrollEndDrag={()=> this.props.toggleScroll(true)}
+        onScroll={() => this.props.toggleScroll(false)}
+        onMomentumScrollEnd={()=> this.props.toggleScroll(true)}
         horizontal
         showsHorizontalScrollIndicator={false}
         >
