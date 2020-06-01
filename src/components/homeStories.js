@@ -1,7 +1,6 @@
 import React from 'react';
 import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } from 'react-native';
 import styled from 'styled-components/native'
-
 const { width, height } = Dimensions.get('window');
 
 
@@ -80,6 +79,8 @@ export default class Stories extends React.Component {
                 </StoryImageContainer>
                 <StoryUserName>Your story</StoryUserName>
             </StorieUserContainer>
+
+            
             <StorieUserContainer>
                 <StoryImageContainer>
                     <StorieUserImage  source={require('../../assets/stories/storie2.jpeg')}/>
@@ -115,7 +116,7 @@ export default class Stories extends React.Component {
                     <StorieUserImage  source={require('../../assets/stories/storie7.jpeg')}/>
                 </StoryImageContainer>
                 <StoryUserName>Mehdi</StoryUserName>
-            </StorieUserContainer>
+            </StorieUserContainer> 
 
         </StoriesContainer>
     );

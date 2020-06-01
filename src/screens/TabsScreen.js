@@ -9,6 +9,7 @@ import SearchScreen from './tabScreens/search'
 import MediaScreen from './tabScreens/media'
 import LikesScreen from './tabScreens/likes'
 import ProfileScreen from './tabScreens/profile'
+import TabBarIcon from '../components/tabBarIcon'
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,8 @@ export default function TabNavigatorScreen({toggleScroll,scrollTo}) {
       tabBarOptions={{
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
-            style: {height : 60,},
+          showLabel : false,
+            style: {height : 60,borderTopWidth : 1.5,borderTopColor : 'rgba(204,204,204, .3)'},
             tabStyle : {
                 height : 55,
             },
@@ -27,6 +29,12 @@ export default function TabNavigatorScreen({toggleScroll,scrollTo}) {
                 lineHeight : 55
             }
         }}
+        
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            return <TabBarIcon route={route} focused={focused} size={size} color={color} />;
+          },
+        })}
         
         style={{backgroundColor : 'red'}}>
         <Tab.Screen name="Home">

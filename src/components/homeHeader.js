@@ -35,7 +35,7 @@ const Title = styled.Text`
 const HeaderContainer = styled.View`
     width: ${width}px;
     margin-top :${Platform.OS === 'android' ? 25: 0}px;
-    height: 45px;
+    height: 38px;
     display : flex;
     flex-direction : row;
     justify-content:space-between;

@@ -31,14 +31,14 @@ const SeeTheComments = styled.Text`
 `
 
 
-export default function PostDetails(){
+export default function PostDetails({showComments}){
     return (
         <PostDetailsContainer>
            <LikesCount>1 234 Likes</LikesCount>
            <DescriptionContainer>
                 
-                <DescriptionText><DescriptionUserName>Jon Doe</DescriptionUserName> Missing my quarantine family, Not only did we get to experience Kentucky and the wonderfull fplaces Not only did we get to experience Kentucky and the wonderfull fplaces</DescriptionText>
-            <SeeTheComments>See the 5 comments</SeeTheComments>
+            <DescriptionText><DescriptionUserName>Jon Doe</DescriptionUserName> Missing my quarantine family, Not only did we get to experience Kentucky and the wonderfull fplaces Not only did we get to experience Kentucky and the wonderfull fplaces</DescriptionText>
+            
            </DescriptionContainer>
 
         </PostDetailsContainer>

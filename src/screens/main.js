@@ -5,15 +5,11 @@ import CameraScreen from './camera'
 import TabNavigatorScreen from './TabsScreen';
 import MessagingScreen from './messaging';
 const { width, height } = Dimensions.get('window');
-const StyledSafeAreaView = styled.View`
+const StyledView = styled.View`
     width: 100%;
     height: 100%;
 `
-const StyledView = styled.View`
-    width: ${width}px;
-    height: 100%;
-    background-color : beige;
-`
+
 export default class Main extends React.Component {
 
   constructor() {
@@ -40,7 +36,7 @@ export default class Main extends React.Component {
   render(){
     
     return (
-      <StyledSafeAreaView >
+      <StyledView >
         <ScrollView
             showsHorizontalScrollIndicator={false}
             pagingEnabled
@@ -52,7 +48,7 @@ export default class Main extends React.Component {
             <TabNavigatorScreen scrollTo={this.scrollTo} toggleScroll={this.toggleScroll} />
             <MessagingScreen />
           </ScrollView>
-      </StyledSafeAreaView>
+      </StyledView>
     );
   }
   

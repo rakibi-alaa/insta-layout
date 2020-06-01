@@ -1,10 +1,11 @@
-import React from 'react';
-import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } from 'react-native';
+import React,{useRef} from 'react';
+import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback,Animated,Easing } from 'react-native';
 import styled from 'styled-components/native'
 import Svg, { Circle, Line,Path,G } from 'react-native-svg';
 import PostHeader from './postHeader';
 import PostBottomReactions from './postBottomReactions';
 import PostDetails from './postDetails';
+import PostComments from './postComments';
 const { width, height } = Dimensions.get('window');
 
 const PostContainer = styled.View`
@@ -29,8 +30,9 @@ const PostImageCount = styled.Text`
     overflow : hidden;
 `
 
-export default function Post({item}){
 
+export default function Post({item}){
+    
     return (
         <PostContainer id={item.id}>
             <PostHeader />
@@ -40,7 +42,8 @@ export default function Post({item}){
                 </PostImageCount>
             </PostImage>
             <PostBottomReactions/>
-            <PostDetails />
+            <PostDetails/>
+            <PostComments />
         </PostContainer>
     );
 
