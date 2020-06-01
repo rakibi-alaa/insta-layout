@@ -4,18 +4,7 @@ import styled from 'styled-components/native'
 const { width, height } = Dimensions.get('window');
 import Svg, { Rect, Line,Path,G } from 'react-native-svg';
 
-const PostDetailsContainer = styled.View`
-    width: ${width}px;
-    padding : 0px 12px;
 
-`
-const LikesCount = styled.Text`
-    font-size : 15px;
-    font-weight : 600;
-`
-const DescriptionContainer = styled.View`
-    padding-top : 5px;
-`
 const CommentUserName = styled.Text`
     font-size : 12px;
     font-weight : 700;
@@ -47,7 +36,7 @@ export default function PostComments({mainNavigation}){
             delay : 150,
             duration : 80
         }).start();
-        mainNavigation.navigate('Comments')
+        //mainNavigation.navigate('Comments')
       };
     return (
         <View style={{paddingLeft : 13,paddingTop : 5}}>

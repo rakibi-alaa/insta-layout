@@ -1,15 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View,Dimensions,ScrollView,Platform} from 'react-native';
-import styled from 'styled-components/native'
 import CameraScreen from './camera'
 import TabNavigatorScreen from './TabsScreen';
 import MessagingScreen from './messaging';
 const { width, height } = Dimensions.get('window');
-const StyledView = styled.View`
-    width: 100%;
-    height: 100%;
-    padding-top : ${Platform.OS === 'android' ? 20 : 32}px;
-`
+
 
 export default class Main extends React.Component {
 
@@ -38,7 +33,7 @@ export default class Main extends React.Component {
   render(){
     
     return (
-      <StyledView>
+      <View>
         <ScrollView
         nestedScrollEnabled={true}
             showsHorizontalScrollIndicator={false}
@@ -49,9 +44,9 @@ export default class Main extends React.Component {
           >
             <CameraScreen />
             <TabNavigatorScreen mainNavigation={this.props.navigation} scrollTo={this.scrollTo} toggleScroll={this.toggleScroll} />
-            <MessagingScreen />
+            <MessagingScreen mainNavigation={this.props.navigation} scrollTo={this.scrollTo}/>
           </ScrollView>
-      </StyledView>
+      </View>
     );
   }
   
