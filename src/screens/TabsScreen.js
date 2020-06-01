@@ -13,7 +13,7 @@ import TabBarIcon from '../components/tabBarIcon'
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigatorScreen({toggleScroll,scrollTo}) {
+export default function TabNavigatorScreen({toggleScroll,scrollTo,mainNavigation}) {
   return (
     <View style ={{width : width}}>
       <Tab.Navigator 
@@ -38,7 +38,7 @@ export default function TabNavigatorScreen({toggleScroll,scrollTo}) {
         
         style={{backgroundColor : 'red'}}>
         <Tab.Screen name="Home">
-        {() => <HomeScreen toggleScroll={toggleScroll} scrollTo={scrollTo} />}
+        {() => <HomeScreen mainNavigation={mainNavigation} toggleScroll={toggleScroll} scrollTo={scrollTo} />}
         </Tab.Screen>
         <Tab.Screen name="Search"  component={SearchScreen} />
         <Tab.Screen name="Media"  component={MediaScreen} />

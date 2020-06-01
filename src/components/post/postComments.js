@@ -32,7 +32,7 @@ const SeeTheComments = styled.Text`
 `
 
 
-export default function PostComments(){
+export default function PostComments({mainNavigation}){
     const commentsShow = useRef(new Animated.Value(0)).current;
     const commentsOpacity = useRef(new Animated.Value(0)).current;
 
@@ -47,6 +47,7 @@ export default function PostComments(){
             delay : 150,
             duration : 80
         }).start();
+        mainNavigation.navigate('Comments')
       };
     return (
         <View style={{paddingLeft : 13,paddingTop : 5}}>

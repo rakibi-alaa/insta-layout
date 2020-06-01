@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,Dimensions,ScrollView } from 'react-native';
+import { StyleSheet, Text, View,Dimensions,ScrollView,Platform} from 'react-native';
 import styled from 'styled-components/native'
 import CameraScreen from './camera'
 import TabNavigatorScreen from './TabsScreen';
@@ -8,6 +8,7 @@ const { width, height } = Dimensions.get('window');
 const StyledView = styled.View`
     width: 100%;
     height: 100%;
+    padding-top : ${Platform.OS === 'android' ? 20 : 32}px;
 `
 
 export default class Main extends React.Component {
@@ -22,6 +23,7 @@ export default class Main extends React.Component {
   }
   
   componentDidMount(){
+   
     setTimeout(()=>{
       this.scrollView.scrollTo({x: width,animated : false})
     },1)
@@ -36,8 +38,9 @@ export default class Main extends React.Component {
   render(){
     
     return (
-      <StyledView >
+      <StyledView>
         <ScrollView
+        nestedScrollEnabled={true}
             showsHorizontalScrollIndicator={false}
             pagingEnabled
             scrollEnabled={this.state.scroll}
@@ -45,7 +48,7 @@ export default class Main extends React.Component {
             horizontal
           >
             <CameraScreen />
-            <TabNavigatorScreen scrollTo={this.scrollTo} toggleScroll={this.toggleScroll} />
+            <TabNavigatorScreen mainNavigation={this.props.navigation} scrollTo={this.scrollTo} toggleScroll={this.toggleScroll} />
             <MessagingScreen />
           </ScrollView>
       </StyledView>
@@ -54,8 +57,3 @@ export default class Main extends React.Component {
   
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

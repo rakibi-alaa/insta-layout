@@ -1,21 +1,20 @@
 import React from 'react';
-import {  Text, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } from 'react-native';
+import {  FlatList, View,Dimensions,ScrollView, Image,TouchableWithoutFeedback } from 'react-native';
 import styled from 'styled-components/native'
 const { width, height } = Dimensions.get('window');
 
 
 const StoriesContainer = styled.ScrollView`
     width: ${width}px;
-    height: 120px;
+    height: 110px;
     display : flex;
     flex-direction : row;
-    padding : 5px 0px;
+    padding : 5px 0px 0px 0px;
     borderBottomWidth : 1px ;
     borderBottomColor : rgba(204,204,204, .9);
 `
 
 const StorieUserContainer = styled.TouchableOpacity`
-    
 `
 const StoryImageContainer = styled.View`
     position : relative;
@@ -61,7 +60,6 @@ const StoryUserName = styled.Text`
 export default class Stories extends React.Component {
 
    
-
     render(){
     return (
         <StoriesContainer 
@@ -78,9 +76,7 @@ export default class Stories extends React.Component {
                     </UserAddStory>
                 </StoryImageContainer>
                 <StoryUserName>Your story</StoryUserName>
-            </StorieUserContainer>
-
-            
+            </StorieUserContainer> 
             <StorieUserContainer>
                 <StoryImageContainer>
                     <StorieUserImage  source={require('../../assets/stories/storie2.jpeg')}/>
@@ -117,8 +113,11 @@ export default class Stories extends React.Component {
                 </StoryImageContainer>
                 <StoryUserName>Mehdi</StoryUserName>
             </StorieUserContainer> 
+            
+            
 
         </StoriesContainer>
     );
     }
 }
+

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import MainScreen from './src/screens/main'
+import comments from './src/screens/messaging'
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -12,8 +13,12 @@ export default function App() {
   return (
    
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={MainScreen} />
+      <Stack.Navigator screenOptions={{
+        headerShown: false,
+        cardStyle : {backgroundColor : '#FFF'}
+        }}>
+        <Stack.Screen name="Container" component={MainScreen} />
+        <Stack.Screen name="Comments" component={comments} />
       </Stack.Navigator>
     </NavigationContainer>
   );

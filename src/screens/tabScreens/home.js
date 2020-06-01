@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View ,Dimensions, SafeAreaView, FlatList} from 'react-native';
-import Header from '../../components/homeHeader'
+import Header from '../../components/headers/homeHeader' 
 import Stories from '../../components/homeStories'
 import Post from '../../components/post'
 const { width, height } = Dimensions.get('window');
@@ -9,12 +9,12 @@ const { width, height } = Dimensions.get('window');
 class  HomeScreen extends React.PureComponent {
     renderItem = ({item,index}) =>{
         return (
-          <Post key={index} item={item}/>
+          <Post key={index} item={item} mainNavigation={this.props.mainNavigation}/>
         )
     }
     render(){
       return (
-        <SafeAreaView style={{backgroundColor : '#FFF'}}>
+        <View style={{backgroundColor : '#FFF'}}>
           <Header scrollTo={this.props.scrollTo}/>
           <Stories toggleScroll={this.props.toggleScroll}/>
           <FlatList
@@ -24,7 +24,7 @@ class  HomeScreen extends React.PureComponent {
           keyExtractor={item => item + ''}
           contentContainerStyle={{paddingBottom : 170,backgroundColor:'#fff'}}
           />
-        </SafeAreaView>
+        </View>
       );
   }
 }

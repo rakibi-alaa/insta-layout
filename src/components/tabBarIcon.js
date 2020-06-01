@@ -28,7 +28,7 @@ export default function TabBarIcon({route,focused}){
 
    switch (route.name) {
        case "Home":
-           console.log(focused)
+           
            return (
             <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" >
                 <Path stroke="none" d="M0 0h24v24H0z" />
@@ -62,9 +62,8 @@ export default function TabBarIcon({route,focused}){
         case "Likes":
             return (
                 <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke={focused ? 'red' : '#2c3e50'} fill="none" stroke-linecap="round"  stroke-linejoin="round">
-                        
-                        <Path stroke="none" d="M0 0h24v24H0z"/>
-                        <Path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" fill={focused ? 'red' : 'none'} strokeWidth="0.8"/>
+                    <Path stroke="none" d="M0 0h24v24H0z"/>
+                    <Path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" fill={focused ? 'red' : 'none'} strokeWidth="0.8"/>
                 </Svg>
             )
             break;

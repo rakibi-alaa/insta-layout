@@ -31,7 +31,7 @@ const PostImageCount = styled.Text`
 `
 
 
-export default function Post({item}){
+export default function Post({item,mainNavigation}){
     
     return (
         <PostContainer id={item.id}>
@@ -41,9 +41,9 @@ export default function Post({item}){
                     <Text>1/2</Text>
                 </PostImageCount>
             </PostImage>
-            <PostBottomReactions/>
+            <PostBottomReactions />
             <PostDetails/>
-            <PostComments />
+            <PostComments mainNavigation={mainNavigation}/>
         </PostContainer>
     );
 
