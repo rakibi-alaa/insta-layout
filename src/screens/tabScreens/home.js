@@ -16,13 +16,15 @@ class  HomeScreen extends React.PureComponent {
       return (
         <View style={{backgroundColor : '#FFF'}}>
           <Header scrollTo={this.props.scrollTo}/>
-          <Stories toggleScroll={this.props.toggleScroll}/>
           <FlatList
+          ListHeaderComponent={() => {
+            return <Stories toggleScroll={this.props.toggleScroll}/>
+          }}
           showsVerticalScrollIndicator={false}
           data={[1,2,3]} 
           renderItem={this.renderItem}
           keyExtractor={item => item + ''}
-          contentContainerStyle={{paddingBottom : 170,backgroundColor:'#fff'}}
+          contentContainerStyle={{paddingBottom : 70,backgroundColor:'#fff'}}
           />
         </View>
       );

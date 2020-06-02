@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get('window');
 
 const StoriesContainer = styled.ScrollView`
     width: ${width}px;
-    height: 110px;
+    height: 95px;
     display : flex;
     flex-direction : row;
     padding : 5px 0px 0px 0px;
@@ -67,6 +67,7 @@ export default class Stories extends React.Component {
         onMomentumScrollEnd={()=> this.props.toggleScroll(true)}
         horizontal
         showsHorizontalScrollIndicator={false}
+        scrollEventThrottle={16}
         >
             <StorieUserContainer>
                 <StoryImageContainer>
