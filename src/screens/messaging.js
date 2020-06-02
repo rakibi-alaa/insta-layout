@@ -56,7 +56,7 @@ export default function MessagingScreen({mainNavigation, scrollTo}) {
               </View>
             )
         }}
-        contentContainerStyle={{paddingHorizontal : 10}}
+        contentContainerStyle={{paddingHorizontal : 10, paddingBottom : 60}}
         keyExtractor={item => item + '' + Math.random()}
         renderItem={({item,index})=>{
           return <Discussion item={item} key={index}/>

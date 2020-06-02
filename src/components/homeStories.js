@@ -63,11 +63,8 @@ export default class Stories extends React.Component {
     render(){
     return (
         <StoriesContainer 
-        onScroll={() => this.props.toggleScroll(false)}
-        onMomentumScrollEnd={()=> this.props.toggleScroll(true)}
         horizontal
         showsHorizontalScrollIndicator={false}
-        scrollEventThrottle={16}
         >
             <StorieUserContainer>
                 <StoryImageContainer>
